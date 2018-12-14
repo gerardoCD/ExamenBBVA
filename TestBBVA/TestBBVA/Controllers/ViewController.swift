@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     @IBAction func buttonQuery(_ sender: UIButton) {
         let query = MyRequestController()
         if (textFieldURL.text?.isEmpty)!{
-            let alert = UIAlertController(title: "Alert", message: "You must a query", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Alert", message: "You must put a query", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                 switch action.style{
                 case .default:
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         }else{
             query.sendRequestGET(url: textFieldURL.text!)
             let user = UserDefaults.standard.array(forKey: "User")
-            if user?.count == 0 || user == nil{
+                if user?.count == 0 || user == nil{
                 let alert = UIAlertController(title: "Alert", message: "Please check your query", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     switch action.style{
@@ -72,8 +72,8 @@ class ViewController: UIViewController {
                 self.present(alert, animated: true, completion: nil)
                 CoreData.createData(url: textFieldURL.text!)
             }else{
-                CoreData.createData(url: textFieldURL.text!)
-                performSegue(withIdentifier: "segue", sender: nil)
+                    CoreData.createData(url: textFieldURL.text!)
+                    performSegue(withIdentifier: "segue", sender: nil)
 
             }
             

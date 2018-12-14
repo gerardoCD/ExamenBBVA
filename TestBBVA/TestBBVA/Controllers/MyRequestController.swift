@@ -14,7 +14,7 @@ class MyRequestController {
         
         let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
         
-        guard let URL = URL(string: url) else {return}
+        guard let URL = URL(string:url) else {return}
         var request = URLRequest(url: URL)
         request.httpMethod = "GET"
         
@@ -129,11 +129,8 @@ class MyRequestController {
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
 
-        
-        /* Start a new Task */
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             if (error == nil) {
-                // Success
                 let statusCode = (response as! HTTPURLResponse).statusCode
                 print("URL Session Task Succeeded: HTTP \(statusCode)")
             }

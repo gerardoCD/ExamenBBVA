@@ -19,9 +19,7 @@ class TableController: UIViewController,UITableViewDataSource,UITableViewDelegat
     override func viewDidAppear(_ animated: Bool) {
         responds = UserDefaults.standard.array(forKey: "User") as! [String]
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        UserDefaults.standard.removeObject(forKey: "User")
-    }
+ 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return responds.count
