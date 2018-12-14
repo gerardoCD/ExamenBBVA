@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Test BBVA
+//  TestBBVA
 //
 //  Created by Gerardo on 12/13/18.
 //  Copyright © 2018 Gerardo. All rights reserved.
@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "Test_BBVA")
+        let container = NSPersistentContainer(name: "TestBBVA")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.
