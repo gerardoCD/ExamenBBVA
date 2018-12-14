@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ViewController: UIViewController {
 
@@ -55,7 +56,6 @@ class ViewController: UIViewController {
         }else{
             query.sendRequestGET(url: textFieldURL.text!)
             let user = UserDefaults.standard.array(forKey: "User")
-            print(user?.count)
             if user?.count == 0 || user == nil{
                 let alert = UIAlertController(title: "Alert", message: "Please check your query", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
@@ -70,7 +70,9 @@ class ViewController: UIViewController {
 
                     }}))
                 self.present(alert, animated: true, completion: nil)
+                CoreData.createData(url: textFieldURL.text!)
             }else{
+                CoreData.createData(url: textFieldURL.text!)
                 performSegue(withIdentifier: "segue", sender: nil)
 
             }
@@ -82,8 +84,11 @@ class ViewController: UIViewController {
     }
     
     
+    }
+    
+    
    
   
     
-}
+
 

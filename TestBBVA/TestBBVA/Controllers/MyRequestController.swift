@@ -93,7 +93,7 @@ class MyRequestController {
                     print("Failed to load: \(error.localizedDescription)")
                 }
                 
-              //  UserDefaults.standard.set(, forKey: <#T##String#>)
+          
               
             }
             else {
