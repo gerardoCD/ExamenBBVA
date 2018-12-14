@@ -55,7 +55,8 @@ class ViewController: UIViewController {
         }else{
             query.sendRequestGET(url: textFieldURL.text!)
             let user = UserDefaults.standard.array(forKey: "User")
-            if user?.count == 0{
+            print(user?.count)
+            if user?.count == 0 || user == nil{
                 let alert = UIAlertController(title: "Alert", message: "Please check your query", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     switch action.style{
